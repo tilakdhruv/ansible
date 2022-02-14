@@ -21,14 +21,14 @@
     - catalogue
   roles:
     - catalogue
-#
-#- name: Setup Redis Component
-#  hosts: REDIS
-#  become: yes
-#  tags:
-#    - redis
-#  roles:
-#    - redis
+
+- name: Setup Redis Component
+  hosts: REDIS
+  become: yes
+  tags:
+    - redis
+  roles:
+    - redis
 #
 #- name: Setup User Component
 #  hosts: USER
