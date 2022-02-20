@@ -33,11 +33,11 @@ scrape_configs:
         target_label: "env"
     ec2_sd_configs:
       - region: us-east-1 ## N. Virginia
-  {% raw %}
+{% raw %}
 #        access_key: {{AWS_ACCESS_KEY}}
 #        secret_key: {{AWS_SECRET_KEY}}
-  {% endraw %}
-- port: 9100
-  filters:
-    - name: "tag:Monitor"
-      values: ["yes"]
+{% endraw %}
+port: 9100
+filters:
+  - name: "tag:Monitor"
+    values: ["yes"]
