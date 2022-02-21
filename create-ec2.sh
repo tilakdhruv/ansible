@@ -56,8 +56,7 @@ INSTANCE_CREATE() {
 ### Main Program
 
 #AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-7-DevOps-Practice" --query 'Images[*].[ImageId]' --output text)
-
-ami-07ac8fcd4c7338744
+AMI_ID=ami-07ac8fcd4c7338744
 
 if [ "$1" == "list" ]; then
   aws ec2 describe-instances  --query "Reservations[*].Instances[*].{PrivateIP:PrivateIpAddress,PublicIP:PublicIpAddress,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name}"  --output table
