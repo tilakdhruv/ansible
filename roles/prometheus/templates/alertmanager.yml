@@ -17,4 +17,4 @@ inhibit_rules:
       severity: 'critical'
     target_match:
       severity: 'warning'
-    equal: ['alertname', 'dev', 'instan ce']
+    equal: ['alertname', 'dev', 'instance']
