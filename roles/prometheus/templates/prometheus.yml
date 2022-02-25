@@ -9,7 +9,7 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-            - localhost:9093
+          # - localhost:9093
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -33,11 +33,10 @@ scrape_configs:
         target_label: "env"
     ec2_sd_configs:
       - region: us-east-1 ## N. Virginia
-{% raw %}
-#        access_key: {{AWS_ACCESS_KEY}}
-#        secret_key: {{AWS_SECRET_KEY}}
-{% endraw %}
-  port: 9100
-  filters:
-    - name: "tag:Monitor"
-      values: ["yes"]
+
+        #        access_key: {{AWS_ACCESS_KEY}}
+        #        secret_key: {{AWS_SECRET_KEY}}
+        port: 9100
+        filters:
+          - name: "tag:Monitor"
+            values: ["yes"]
