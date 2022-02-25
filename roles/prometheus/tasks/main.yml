@@ -3,6 +3,12 @@
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
 
+- name: Restart Prometheus
+  systemd:
+    name: prometheus
+    state: restarted
+    enabled: yes
+
 #- name: Copy Alerts configuration
 #  template:
 #    src: alerts.yml
@@ -13,11 +19,7 @@
 #    src: alertmanager.yml
 #    dest: /opt/alertmanager/alertmanager.yml
 #
-- name: Restart Prometheus
-  systemd:
-    name: prometheus
-    state: restarted
-    enabled: yes
+
 #
 #- name: Restart AlertManager
 #  systemd:
