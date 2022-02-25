@@ -10,3 +10,4 @@
     name: elk
     tasks_from: filebeat
   when: APPTYPE == "app" or APPTYPE == "web"
+  
