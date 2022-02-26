@@ -14,7 +14,7 @@ groups:
     labels:
       severity: warning
     annotations:
-       summary: High Disk Usage Alert Critical
+      summary: High Disk Usage Alert Critical
 
   {% for component in COMPONENTS %}
   - alert: {{component.componentName}}ServiceAlert
