@@ -1,5 +1,4 @@
 COMPONENT: payment
-APPTYPE: appCOMPONENT: payment
 APPTYPE: app
 LOG_FILES:
   - /var/log/payment.log
