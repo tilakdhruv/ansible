@@ -9,20 +9,19 @@
     state: restarted
     enabled: yes
 
-#- name: Copy Alerts configuration
-#  template:
-#    src: alerts.yml
-#    dest: /opt/prometheus/alerts.yml
-#
-#- name: Copy Alerts Manager configuration
-#  template:
-#    src: alertmanager.yml
-#    dest: /opt/alertmanager/alertmanager.yml
-#
+- name: Copy Alerts configuration
+  template:
+    src: alerts.yml
+    dest: /opt/prometheus/alerts.yml
 
-#
-#- name: Restart AlertManager
-#  systemd:
-#    name: alertmanager
-#    state: restarted
-#    enabled: yes
+- name: Copy Alerts Manager configuration
+  template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+
+- name: Restart AlertManager
+  systemd:
+    name: alertmanager
+    state: restarted
+    enabled: yes
