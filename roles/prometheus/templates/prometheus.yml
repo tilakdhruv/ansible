@@ -23,7 +23,7 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: "prometheus"
     static_configs:
-    - targets: ["localhost:9090"]
+      - targets: ["localhost:9090"]
 
   - job_name: "ec2-nodes-sd"
     relabel_configs:
@@ -37,7 +37,7 @@ scrape_configs:
 #        access_key: {{AWS_ACCESS_KEY}}
 #        secret_key: {{AWS_SECRET_KEY}}
   {% endraw %}
-        port : 9100
+        port: 9100
         filters:
           - name: "tag:Monitor"
             values: ["yes"]
